@@ -27,7 +27,7 @@ public class IOHandler
             socket.connect(new InetSocketAddress(ip, port), 2500);
             inputStream = socket.getInputStream();
             
-            output = new PrintWriter(new BufferedOutputStream(socket.getOutputStream()));
+            output = new PrintWriter(socket.getOutputStream());
             
             InputSwingWorker inputSwingWorker = new InputSwingWorker(clientFrame, this);
             inputSwingWorker.execute();
